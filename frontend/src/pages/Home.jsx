@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 // react-app/src/pages/Home.js
-
+import Nav from '../components/nav';
 import React, { useEffect, useState } from "react";
 import Product from "../components/Product";
 export default function Home() {
@@ -36,6 +36,8 @@ export default function Home() {
   }
 
   return (
+    <>
+    <Nav />
     <div className="w-full min-h-screen bg-neutral-800">
       <h1 className="text-3xl text-center text-white py-6">Product Gallery</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 p-4">
@@ -44,5 +46,6 @@ export default function Home() {
         ))}
       </div>
     </div>
+    </>
   );
 }

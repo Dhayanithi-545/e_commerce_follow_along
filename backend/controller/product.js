@@ -93,6 +93,8 @@ router.get('/get-products', async (req, res) => {
     }
 });
 
+
+
 router.get('/my-products', async (req, res) => {
     const { email } = req.query;
     try {
@@ -178,6 +180,22 @@ router.put('/update-product/:id', pupload.array('images', 10), async (req, res) 
         res.status(500).json({ error: 'Server error. Could not update product.' });
     }
 });
+
+router.delete('/delete-product/:id', async (req, res) => {
+    const { id } = req.params;
+    try {
+        const existingProduct = await Product.findById(id);
+        if (!existingProduct) {
+            return res.status(404).json({ error: 'Product not found.' });
+        }
+        await existingProduct.deleteOne();
+        res.status(200).json({ message: '✅ Product deleted successfully' });
+    } catch (err) {
+        console.error('Server error:', err);
+        res.status(500).json({ error: 'Server error. Could not delete product.' });
+    }
+});
+
 
 
 module.exports = router;
