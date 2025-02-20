@@ -3,7 +3,7 @@
 import './App.css';
 
 import React from 'react';
-import {Login,Signup,Home, CreateProduct, MyProducts} from "./Routes/Routes"
+import {Login,Signup,Home, CreateProduct, MyProducts, ProductDetails} from "./Routes/Routes"
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Cart from './pages/cart';
 function App() {
@@ -35,6 +35,7 @@ function App() {
     <Route path="/create-product/:id" element={<CreateProduct />} />
     <Route path="/my-products" element={<MyProducts/>} />
     <Route path="/cart" element={<Cart/>} />
+    <Route path="/product/:id" element={<ProductDetails/>} />
     </Routes>
     </BrowserRouter>
     </>

@@ -19,7 +19,7 @@ const NavBar = () => {
             <img
               src={logo} // Update with your actual logo path
               alt="EasyShop Logo"
-              className="h-10 w-10 mr-2"
+              className="h-10 w-10 mr-2 rounded-lg"
             />
             <span className="text-white text-xl font-bold tracking-wide">
               EasyShop
@@ -28,7 +28,7 @@ const NavBar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex md:items-center md:justify-center w-full">
-            <ul className="flex space-x-6">
+            <ul className="flex space-x-6 px-30">
               {[
                 { name: "Home", path: "/" },
                 { name: "My Products", path: "/my-products" },
