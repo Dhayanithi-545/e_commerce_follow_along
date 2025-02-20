@@ -1,4 +1,3 @@
-Ecommerce-Follow-Along
 Project Description
 
 The Ecommerce Follow Along project is designed to help developers build a full-stack e-commerce web application using the MERN stack (MongoDB, Express, React, and Node.js). This project follows a hands-on approach, where you will learn and implement key concepts such as user authentication, product management, and order handling through RESTful APIs. By the end of the project, you will have built a functioning e-commerce platform with core features, using JavaScript across both the client and server side.
@@ -31,7 +30,6 @@ In this milestone, the foundational backend structure for the e-commerce applica
 Backend Folder Structure: Organized the project into clearly defined folders (config, controller, db, middleware, model, and utility) to ensure scalability and maintainability. Database Integration: Set up a connection to MongoDB using Mongoose, enabling seamless interaction with the database. Environment Configuration Implemented a .env file to securely manage sensitive data such as database credentials, ensuring better security practices. Middleware Implementation Created essential middleware for authentication, error handling, and asynchronous error management to streamline request processing and ensure robust error handling. Utility Functions -Added reusable utility components like a custom error handler to improve consistency and simplify debugging.
 
 Git Integration Configured version control with Git and included a .gitignore file to exclude sensitive files and unnecessary folders like node_modules. This milestone sets up a solid backend foundation for further development, including API implementation, user authentication, and business logic handling. It ensures that the project is structured, secure, and ready for future expansion.
-
 
 Milestone 4: Creating User Model and Controller
 In this milestone, the focus was on implementing the user model and controller for managing user data and operations in the backend. Key achievements include:
@@ -83,33 +81,35 @@ In this milestone, we focused on retrieving product data from the backend and dy
 Backend: Creating an API Endpoint to Fetch All Products Developed a GET endpoint (/api/products) in the backend to send all product data to the frontend. Implemented MongoDB queries using Mongoose to retrieve all stored products. Ensured error handling to manage potential issues in fetching data.
 Frontend: Fetching Data from API Created an API call function using fetch or axios in React to retrieve product data from the backend. Managed the fetched data using React useState and useEffect hooks to ensure dynamic updates.
 Displaying Products Dynamically Passed the fetched product data to a ProductCard component. Used the product details (name, image, price, etc.) as props to display them dynamically. Applied responsive CSS styling to create a visually appealing product grid layout.
-
-
 Milestone 12: Filtering Products by User Email and Displaying Data
 In this milestone, we focused on filtering products based on the user's email and sending only relevant product data to the frontend. Key achievements include:
 
 Backend: Creating a Filtered API Endpoint Developed a GET endpoint (/api/products/:email) to return products associated with a specific user email. Used Mongoose to query the database and fetch only the products uploaded by the provided email. Implemented error handling to manage scenarios where no products match the email.
 Frontend: Fetching Filtered Data from API Created a function in React to fetch only products uploaded by the logged-in user. Used Axios or Fetch API to make requests to the backend with the logged-in user's email. Managed product data using useState and useEffect hooks.
 Displaying Filtered Products Dynamically Passed the fetched filtered product data to a ProductCard component. Rendered product details such as name, image, price, and description dynamically. Ensured a clean and structured UI using CSS and responsive layout techniques.
-
-
 Milestone 13: Updating Product Data and Form Auto-Fill
 In this milestone, we focused on implementing update functionality for product data, allowing users to modify existing product information through an editable form. Key achievements include:
 
-Backend: Creating an Update Endpoint
-Developed a PUT endpoint to receive and update existing product data in MongoDB.
-Used Mongoose to find the product by its ID and update its fields.
-Ensured data validation to maintain data integrity and prevent errors during updates.
-Handled potential errors, such as cases where the product is not found.
-Frontend: Form Auto-Fill and Edit Functionality
-Added an Edit button to each product card.
-Clicking the Edit button opens a form pre-filled with the existing product details.
-Users can modify the form fields and save changes to update the product.
-Used React state and useEffect to manage form data and populate it with the product’s current details.
-UI and UX Enhancements
-Ensured a responsive layout for the edit form, providing a user-friendly experience.
-Added error messages for invalid data and success notifications on successful updates.
-Future Enhancements & Experimentation
-Admin-Only Access: Restrict update functionality to authorized users, such as shop owners or admins.
-Real-Time Updates: Implement real-time data updates on the product listing page.
-Optimized Form Design: Enhance the form with file uploads for updating product images and improved field validation.
+Backend: Creating an Update Endpoint Developed a PUT endpoint to receive and update existing product data in MongoDB. Used Mongoose to find the product by its ID and update its fields. Ensured data validation to maintain data integrity and prevent errors during updates. Handled potential errors, such as cases where the product is not found. Frontend: Form Auto-Fill and Edit Functionality Added an Edit button to each product card. Clicking the Edit button opens a form pre-filled with the existing product details. Users can modify the form fields and save changes to update the product. Used React state and useEffect to manage form data and populate it with the product’s current details. UI and UX Enhancements Ensured a responsive layout for the edit form, providing a user-friendly experience. Added error messages for invalid data and success notifications on successful updates. Future Enhancements & Experimentation Admin-Only Access: Restrict update functionality to authorized users, such as shop owners or admins. Real-Time Updates: Implement real-time data updates on the product listing page. Optimized Form Design: Enhance the form with file uploads for updating product images and improved field validation.
+
+Milestone 14: Deleting Product Data from MongoDB
+In this milestone, we focused on implementing delete functionality for product data, allowing users to remove existing product records from the database. Key achievements include:
+
+Backend: Creating a Delete Endpoint Developed a DELETE endpoint to remove product data from MongoDB using the product ID. Used Mongoose to find and delete the product by its ID. Implemented error handling to manage scenarios where the product ID does not exist.
+
+Frontend: Delete Button and Request Handling Added a Delete button to each product card. Clicking the Delete button sends a request to the delete endpoint with the product ID. Implemented a confirmation dialog to ensure users intend to delete the product. Updated the product list dynamically to remove the deleted product without refreshing the page.
+
+UI and UX Enhancements Provided feedback on successful or failed delete operations. Enhanced the user experience with a clean and responsive UI for managing product deletions.
+
+Milestone 15: Creating a Responsive Navbar
+In this milestone, we focused on building a reusable and responsive Nav component that enhances navigation across multiple pages of the e-commerce application. Key achievements include:
+
+Frontend: Creating the Nav Component Designed a new Nav component with navigation links to all key pages: Home My Products Add Product Cart Implemented smooth navigation between these pages using React Router. Responsive Design Used CSS Flexbox and media queries to ensure the Navbar is fully responsive on all screen sizes (mobile, tablet, desktop). Added a hamburger menu for smaller screens to toggle the navigation links.
+
+
+
+
+Milestone16: Showing product discription:
+Product Details Component This is a React component that retrieves and displays detailed information about a specific product from an API. It provides users with an intuitive interface to view product details, adjust the quantity, and handle different loading and error scenarios.
+Features Fetches and Displays Product Details: Retrieves product data, including name, description, category, tags, price, and images, from an API endpoint. Quantity Selection: Allows users to increment or decrement the quantity before adding the product to the cart. Handles Loading and Error States: Displays appropriate messages while data is being fetched or if an error occurs. Image Display: If product images are available, they are displayed dynamically. A placeholder is shown if no image is found. Add to Cart Button: Provides an interactive button to allow users to proceed with purchasing the product.
+
