@@ -21,7 +21,7 @@ export default function Home() {
         setLoading(false);
       })
       .catch((err) => {
-        console.error("❌ Error fetching products:", err);
+        console.error("❌ Error fetching products:", );
         setError(err.message);
         setLoading(false);
       });
@@ -32,10 +32,10 @@ export default function Home() {
   }
 
   if (error) {
-    return <div className="text-center text-red-500 mt-10">Error: {error}</div>;
+    return <div className="text-center text-red-50err0 mt-10">Error: {error}</div>;
   }
 
-  return (
+  return ( 
     <>
     <Nav />
     <div className="w-full min-h-screen bg-neutral-800">
