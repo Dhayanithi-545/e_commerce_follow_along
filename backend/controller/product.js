@@ -4,10 +4,9 @@ const express = require('express');
 const Product = require('../model/product');
 const User = require('../model/user');
 const router = express.Router();
-const mongoose = require("mongoose")
 const { pupload } = require("../multer");
 const path = require('path');
-
+const mongoose = require('mongoose'); //
 // Validation function
 const validateProductData = (data) => {
     const errors = [];
@@ -46,7 +45,7 @@ console.log("req",name, description, category, tags, price, stock, email )
     try {
         // Check if user exists
         const user = await User.findOne({ email });
-        if (user) {
+        if (!user) {
             return res.status(400).json({ error: 'Email does not exist in the users database' });
         }
 
@@ -94,10 +93,9 @@ router.get('/get-products', async (req, res) => {
     }
 });
 
-
-
 router.get('/my-products', async (req, res) => {
     const { email } = req.query;
+    console.log(email)
     try {
         const products = await Product.find({ email });
         const productsWithFullImageUrl = products.map(product => {
@@ -196,6 +194,7 @@ router.delete('/delete-product/:id', async (req, res) => {
         res.status(500).json({ error: 'Server error. Could not delete product.' });
     }
 });
+
 
 router.post('/cart', async (req, res) => {
     try {
@@ -300,5 +299,4 @@ router.put('/cartproduct/quantity', async (req, res) => {
         res.status(500).json({ error: 'Server Error' });
     }
 });
-
 module.exports = router;

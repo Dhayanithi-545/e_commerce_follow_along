@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
 // react-app/src/pages/Home.js
-import Nav from '../components/nav';
+
 import React, { useEffect, useState } from "react";
 import Product from "../components/Product";
+import Nav from "../components/nav";
 export default function Home() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true); // For loading state
@@ -21,7 +22,7 @@ export default function Home() {
         setLoading(false);
       })
       .catch((err) => {
-        console.error("❌ Error fetching products:", );
+        console.error("❌ Error fetching products:", err);
         setError(err.message);
         setLoading(false);
       });
@@ -32,12 +33,12 @@ export default function Home() {
   }
 
   if (error) {
-    return <div className="text-center text-red-50err0 mt-10">Error: {error}</div>;
+    return <div className="text-center text-red-500 mt-10">Error: {error}</div>;
   }
 
-  return ( 
+  return (
     <>
-    <Nav />
+     <Nav />
     <div className="w-full min-h-screen bg-neutral-800">
       <h1 className="text-3xl text-center text-white py-6">Product Gallery</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 p-4">
