@@ -131,8 +131,9 @@ router.get("/addresses", catchAsyncErrors(async (req, res, next) => {
         success: true,
         addresses: user.addresses,
     });
-  }
-  ));
-  
+}
+));
+
+
 
 module.exports = router;
