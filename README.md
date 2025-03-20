@@ -403,3 +403,18 @@ Backend Updates: Order Processing
 ✅ Fetches user addresses and cart items via API.
 ✅ Sends order details (email, address, cart items) to the backend.
 ✅ Handles loading and error states for a smooth experience.
+
+# Milestone 25: Creating Backend Endpoint for Placing an Order
+Learning Goals 🎯 By the end of this milestone, you will:
+
+Create a backend endpoint to store orders in the database. Implement a function to handle order placement. Test the endpoint with a sample order. Step 1: Designing the Backend Endpoint Define the endpoint URL and HTTP method (e.g., POST /orders). Determine the request body structure (e.g., JSON with order details). Step 2: Implementing the Backend Endpoint Use a framework (e.g., Express.js) to create the endpoint. Handle the request body and extract order details. Store the order in the database using an ORM (e.g., Sequelize). Step 3: Testing the Endpoint Use a tool (e.g., Bruno) to send a sample order to the endpoint. Verify that the order is stored correctly in the database.
+
+# Milestone 26: Creating Backend Endpoint for Getting All Orders
+Learning goals You need to create an endpoint that will receive the user mail You will get the mail of the user using that you need to retrive the _id of the user Using that _id you need to get all the orders of that user Send all the users orders in the response.
+
+Created backend endpoint for getting all orders Created an endpoint that receives a user's email, retrieves the user's _id based on the provided email, fetches all orders associated with that _id, and returns all the user's orders in the response.
+
+# Milestone 27: Creating a frontpage and for displaying users orders
+Learning Goals You need to create an my-orders page You will send an get request to my-orders endpoint that we created in previous milestone. We will send user mail in to endpoint to get all the user orders Display all the user orders We will add my-orders page in navbar for better navigation.
+
+Created a My Orders page that sends a GET request to the my-orders endpoint created in the previous milestone. The user's email is sent to the endpoint to retrieve all their orders, which are then displayed on the page. Additionally, added the My Orders page to the navbar for improved navigation.
