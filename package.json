@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/akshara25r/Ecommerce-Follow-Along#readme",
   "dependencies": {
+    "@paypal/react-paypal-js": "^8.8.2",
     "bcrypt": "^5.1.1",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.4.7",
