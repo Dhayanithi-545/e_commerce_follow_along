@@ -6,7 +6,7 @@ import Nav from '../components/nav';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 // 1) Import PayPalScriptProvider & PayPalButtons
-import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
+import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js/';
 
 const OrderConfirmation = () => {
     const location = useLocation();
@@ -113,7 +113,7 @@ const OrderConfirmation = () => {
             const payload = {
                 email,
                 shippingAddress: selectedAddress,
-                orderItems,
+                orderItems, 
                 paymentMethod: paymentType, // 'cod' or 'paypal'
                 // Optionally store PayPal transaction details:
                 paypalOrderData,
@@ -127,6 +127,7 @@ const OrderConfirmation = () => {
 
             console.log('Orders placed successfully:', response.data);
             // Navigate to success page
+            alert("Yuor Order Placed Successfully, please come out of your home to collect it asap")
             navigate('/myorders');
         } catch (error) {
             console.error('Error placing order:', error);
