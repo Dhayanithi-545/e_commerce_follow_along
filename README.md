@@ -440,3 +440,29 @@ Key Highlights:
 PayPal Integration: Configured a sandbox account, installed react-paypal-js, and implemented PayPal's API for secure transactions.
 Navigation Component: Built a responsive Nav component with React Router for smooth navigation across key pages (Home, My Products, Add Product, Cart).
 Responsive Design: Used CSS Flexbox and media queries to ensure adaptability across all screen sizes, with a hamburger menu for mobile users.
+
+# Milestone 31: Redux Setup and Login Dispatch
+
+Overview
+
+Setup Redux for state management in our e-commerce project, created store files, and integrated login dispatch. This milestone ensures a structured approach to managing global state and enables seamless user authentication handling.
+
+Steps Completed
+
+Created the store directory inside src to organize Redux-related files efficiently.
+
+Added store.jsx to configure the Redux store and userActions.jsx to define user-related actions.
+
+Installed necessary dependencies, react-redux and @reduxjs/toolkit, to implement state management effectively.
+
+Integrated Redux into the login page by utilizing useDispatch to dispatch the user's email upon login, ensuring that user data is managed globally.
+
+Established a scalable foundation for managing user authentication and future state-related functionalities.
+
+Benefits of Redux Integration
+
+Centralized state management for better scalability and maintainability.
+
+Improved data flow by keeping authentication state globally accessible.
+
+Enhanced performance by reducing unnecessary re-renders through efficient state updates.
