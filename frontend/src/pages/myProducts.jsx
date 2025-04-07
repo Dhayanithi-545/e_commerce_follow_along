@@ -1,15 +1,20 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import Myproduct from "../components/myproduct"; // <-- Import the Product component
+import { useSelector } from 'react-redux'; // Import useSelector
 import Nav from "../components/nav";
+import axios from "../axios.config";
+
 export default function MyProducts() {
+        // Retrieve email from Redux state
+    const userEmail = useSelector((state) => state.user.email);
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    const email = "akshara@gmail.com";
+    const email = userEmail;
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/v2/product/my-products?email=${email}`)
+        axios.get(`/api/v2/product/my-products?email=${email}`)
             .then((res) => {
                 if (!res.ok) {
                     throw new Error(`HTTP error! status: ${res.status}`);

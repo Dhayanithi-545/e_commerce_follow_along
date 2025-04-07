@@ -1,10 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import axios from "axios";
+import axios from "../axios.config";
 import { useNavigate } from "react-router-dom";
 import Nav from "../components/nav";
+import { useSelector } from 'react-redux'; // Import useSelector
 
 const CreateAddress = () => {
+
+    const userEmail = useSelector((state) => state.user.email);
+
     const navigate = useNavigate();
 
     const [country, setCountry] = useState("");
@@ -13,6 +17,8 @@ const CreateAddress = () => {
     const [address2, setAddress2] = useState("");
     const [zipCode, setZipCode] = useState("");
     const [addressType, setAddressType] = useState("");
+
+    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -23,12 +29,12 @@ const CreateAddress = () => {
             address2,
             zipCode,
             addressType,
-            email: "dhaya@gmail.com"
+            email: userEmail
         };
 
         try {
             const response = await axios.post(
-                "http://localhost:8000/api/v2/user/add-address",
+                "/api/v2/user/add-address",
                 addressData,
                 {
                     headers: { "Content-Type": "application/json" },
